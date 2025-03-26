@@ -1,20 +1,20 @@
 package com.weektwo.week_two.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.weektwo.week_two.model.Board;
+import lombok.*;
 
-@Getter
-@Setter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class BoardDTO {
 
-    private String id, title, content, writer;
+    private String boardId, title, content, writer, createdAt;
 
-    public BoardDTO() {
-        this.id = "";
-        this.title = "";
-        this.content = "";
-        this.writer = "";
+    public BoardDTO(Board board) {
+        this.boardId = board.getBoardId();
+        this.title = board.getTitle();
+        this.content = board.getContent();
+        this.writer = board.getWriter();
+        this.createdAt = board.getCreatedAt();
     }
-
-
 }
