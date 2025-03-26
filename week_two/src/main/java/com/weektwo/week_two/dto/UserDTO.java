@@ -8,10 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 public class UserDTO {
 
-    private String id;
-    private String name;
-    private String email;
-    private String createdAt;
+    private String id, name, email, createdAt;
 
     public UserDTO(User user) {
         this.id = user.getId();
