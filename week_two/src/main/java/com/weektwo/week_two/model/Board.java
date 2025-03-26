@@ -5,24 +5,22 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import java.util.UUID;
 
 @Entity
 @NoArgsConstructor
+@Getter
 public class Board {
 
     @Id
-    @Getter @Setter
-    private Long id;
-    private String title;
-    private String content;
+    private String boardId;
+    private String title, content, writer, createdAt;
 
-    public Board(BoardDTO boardDTO) {
-        this.id = UUID.randomUUID().getMostSignificantBits();
-        this.title = boardDTO.getTitle();
-        this.content = boardDTO.getContent();
+    public Board(String boardId, String title, String content, String writer, String createdAt) {
+        this.boardId = boardId;
+        this.title = title;
+        this.content = content;
+        this.writer = writer;
+        this.createdAt = createdAt;
     }
 
     public void updateBoard(BoardDTO boardDTO) {
