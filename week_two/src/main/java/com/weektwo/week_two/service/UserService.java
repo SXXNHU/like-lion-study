@@ -36,6 +36,7 @@ public class UserService {
         User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
         user.updateUser(userDTO.getName(), userDTO.getEmail());
         userRepository.save(user);
+        userDTO.setId(userId);
         return userDTO;
     }
 
