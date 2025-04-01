@@ -6,12 +6,10 @@ import lombok.Getter;
 public class UserRequestDTO {
 
     private final String name;
-    private final long age;
-    private final String gender;
+    private final String id;
 
-    public UserRequestDTO(String name, long age, String gender) {
+    public UserRequestDTO(String name, String id) {
         this.name = name;
-        this.age = age;
-        this.gender = gender;
+        this.id = id;
     }
 }
